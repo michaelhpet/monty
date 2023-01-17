@@ -35,6 +35,5 @@ typedef struct instruction_s
 } instruction_t;
 
 extern stack_t *stack;
-extern unsigned int nodes;
 
 #endif /* _MONTY_H_ */
