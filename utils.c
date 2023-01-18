@@ -10,11 +10,14 @@ int nan(char *s)
 	while (*s)
 	{
 		if (*s == '-' && i == 0)
+		{
+			s++, i++;
 			continue;
+		}
 
 		if (*s < 48 || *s > 57)
 			return (1);
-		s++;
+		s++, i++;
 	}
 
 	return (0);

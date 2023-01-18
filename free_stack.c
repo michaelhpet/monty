@@ -6,9 +6,8 @@
  */
 void free_stack(stack_t *stack)
 {
-	stack_t *current;
+	stack_t *current = stack;
 
-	current = stack;
 	if (current == NULL)
 		return;
 
