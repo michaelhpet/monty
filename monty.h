@@ -47,6 +47,7 @@ extern char *argument;
 			{"pint", pint}, \
 			{"pop", pop}, \
 			{"swap", swap}, \
+			{"add", add}, \
 			{NULL, NULL} \
 		}
 
