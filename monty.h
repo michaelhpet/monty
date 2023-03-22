@@ -6,6 +6,22 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define INSTRUCTIONS \
+		{ \
+			{"push", push}, \
+			{"pall", pall}, \
+			{"pint", pint}, \
+			{"pop", pop}, \
+			{"swap", swap}, \
+			{"add", add}, \
+			{"nop", nop}, \
+			{NULL, NULL} \
+		}
+
+#define UNUSED __attribute__((unused))
+
+extern char *argument;
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -36,19 +52,6 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-extern char *argument;
-
-#define INSTRUCTIONS \
-		{ \
-			{"push", push}, \
-			{"pall", pall}, \
-			{"pint", pint}, \
-			{"pop", pop}, \
-			{"swap", swap}, \
-			{"add", add}, \
-			{NULL, NULL} \
-		}
-
 int nan(char *s);
 void free_stack(stack_t *stack);
 void monty(stack_t **stack, char *command, unsigned int line_number);
@@ -58,5 +61,6 @@ void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
 void swap(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
+void nop(stack_t **stack, unsigned int line_number);
 
 #endif /* _MONTY_H_ */
