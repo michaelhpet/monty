@@ -14,11 +14,10 @@ void _pstr(stack_t **stack, unsigned int line_number __attribute__((unused)))
 	while (current)
 	{
 		n = current->n;
-		if (n && n <= 127)
-			fprintf(stdout, "%c", n);
-		else
+		if (n < 1 || n > 127)
 			break;
 
+		fprintf(stdout, "%c", n);
 		current = current->next;
 	}
 
