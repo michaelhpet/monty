@@ -41,13 +41,13 @@ typedef struct instruction_s
 extern char *argument;
 
 #define INSTRUCTIONS \
-		{\
-			{"push", push},\
-			{"pall", pall},\
-			{"pint", pint},\
-			{"pop", pop},\
-			{"swap", swap},\
-			{NULL, NULL}\
+		{ \
+			{"push", push}, \
+			{"pall", pall}, \
+			{"pint", pint}, \
+			{"pop", pop}, \
+			{"swap", swap}, \
+			{NULL, NULL} \
 		}
 
 int nan(char *s);
