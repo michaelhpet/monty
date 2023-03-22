@@ -4,7 +4,7 @@
 #include <string.h>
 #include "monty.h"
 
-void monty(stack_t **stack, char *command, unsigned int line_number);
+void _monty(stack_t **stack, char *command, unsigned int line_number);
 char *argument = NULL; /* for some reason, betty ignores this */
 
 /**
@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
 		argument = strtok(NULL, " \t\n");
 		if (command == NULL || *command == '#') /* skip comments */
 			continue;
-		monty(&stack, command, line_number);
+		_monty(&stack, command, line_number);
 	}
 
 	if (buffer)
@@ -56,26 +56,27 @@ int main(int argc, char *argv[])
 }
 
 /**
- * monty - a monty bytecode interpreter for working with stacks and queues
+ * _monty - a monty bytecode interpreter for working with stacks and queues
  * @stack: double pointer to stack
  * @command: command or opcode of instruction
  * @line_number: line number of instruction file
 */
-void monty(stack_t **stack, char *command, unsigned int line_number)
+void _monty(stack_t **stack, char *command, unsigned int line_number)
 {
 	int i = 0;
-	instruction_t instruction[] = INSTRUCTIONS;
+	instruction_t instructions[] = INSTRUCTIONS;
 
-	while (instruction[i].opcode)
+	while (instructions[i].opcode)
 	{
-		if (strcmp(command, instruction[i].opcode) == 0)
+		if (strcmp(command, instructions[i].opcode) == 0)
 		{
-			instruction[i].f(stack, line_number);
+			instructions[i].f(stack, line_number);
 			return;
 		}
 		i++;
 	}
 
 	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, command);
+	free_stack(*stack);
 	exit(EXIT_FAILURE);
 }
