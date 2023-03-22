@@ -5,7 +5,7 @@
  * @stack: double pointer to head node
  * @line_number: line number of file where instruction was parsed
  */
-void _pchar(stack_t **stack, unsigned int line_number)
+void _pchar(stack_t **stack, unsigned int line_number __attribute__((unused)))
 {
 	int n;
 

@@ -5,26 +5,26 @@
  * @stack: double pointer to head node
  * @line_number: line number of file where instruction was parsed
  */
-void _rotl(stack_t **stack, unsigned int line_number)
+void _rotl(stack_t **stack, unsigned int line_number __attribute__((unused)))
 {
-	int n;
-	stack_t *current, *first;
+	stack_t *last, *top;
 
-	first = *stack;
-	current = *stack;
+	last = *stack;
 
-	if (current == NULL || current->next == NULL)
+	if (last == NULL || last->next == NULL)
 		return;
 
-	while(current)
+	while (last)
 	{
-		if (current->next == NULL)
+		if (last->next == NULL)
 			break;
-		current = current->next;
+		last = last->next;
 	}
 
-	current->next = first;
-	first->prev = current;
-	first->next = NULL;
-	pop(stack, line_number);
+	top = *stack;
+	(*stack) = (*stack)->next;
+	(*stack)->prev = NULL;
+	last->next = top;
+	top->prev = last;
+	top->next = NULL;
 }
