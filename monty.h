@@ -38,12 +38,25 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-char *argument = NULL;
+extern char *argument;
+
+#define INSTRUCTIONS \
+		{\
+			{"push", push},\
+			{"pall", pall},\
+			{"pint", pint},\
+			{"pop", pop},\
+			{"swap", swap},\
+			{NULL, NULL}\
+		}
 
 int nan(char *s);
 void free_stack(stack_t *stack);
-void monty(char *command, unsigned int line_number);
+void monty(stack_t **stack, char *command, unsigned int line_number);
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
+void pint(stack_t **stack, unsigned int line_number);
+void pop(stack_t **stack, unsigned int line_number);
+void swap(stack_t **stack, unsigned int line_number);
 
 #endif /* _MONTY_H_ */
