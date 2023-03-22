@@ -2,6 +2,7 @@ add two digits from stdin
 
 get first digit
 ,
+>+++++ +++++[<---->-]>----- ---
 
 get second digit
 >,
