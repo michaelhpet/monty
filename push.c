@@ -1,13 +1,13 @@
 #include "monty.h"
 
 /**
- * _push - push node to stack (doubly-linked list)
+ * _push - add node to stack (doubly-linked list)
  * @stack: double pointer to head node
  * @line_number: line number of file where instruction was parsed
  */
 void _push(stack_t **stack, unsigned int line_number)
 {
-	int n = atoi(state.argument);
+	int n;
 	stack_t *new_node = malloc(sizeof(stack_t));
 
 	if (new_node == NULL)
@@ -16,14 +16,13 @@ void _push(stack_t **stack, unsigned int line_number)
 		free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
-
 	if (state.argument == NULL || _nan(state.argument))
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
-
+	n = atoi(state.argument);
 	new_node->n = n, new_node->next = NULL, new_node->prev = NULL;
 	if (strcmp(state.data_type, "stack") == 0)
 	{
@@ -42,7 +41,6 @@ void _push(stack_t **stack, unsigned int line_number)
 		*stack = new_node, state.head = new_node, state.tail = new_node;
 		return;
 	}
-
 	(state.tail)->next = new_node;
 	new_node->next = NULL;
 	new_node->prev = state.tail;
