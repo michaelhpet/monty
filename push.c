@@ -3,11 +3,11 @@
 #include "monty.h"
 
 /**
- * push - push node to stack (doubly-linked list)
+ * _push - push node to stack (doubly-linked list)
  * @stack: pdouble pointer to head node
  * @line_number: line number of file where instruction was parsed
 */
-void push(stack_t **stack, unsigned int line_number)
+void _push(stack_t **stack, unsigned int line_number)
 {
 	int n;
 	stack_t *new_node;
@@ -20,14 +20,14 @@ void push(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	if (argument == NULL || nan(argument))
+	if (op_arg == NULL || _nan(op_arg))
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
 
-	n = atoi(argument);
+	n = atoi(op_arg);
 	new_node->n = n;
 	new_node->prev = NULL;
 	new_node->next = *stack;

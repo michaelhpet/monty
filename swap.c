@@ -3,11 +3,11 @@
 #include "monty.h"
 
 /**
- * swap - swaps the top two elements of the stack
+ * _swap - swaps the top two elements of the stack
  * @stack: double pointer to head node
  * @line_number: line number of file where instruction was parsed
  */
-void swap(stack_t **stack, unsigned int line_number)
+void _swap(stack_t **stack, unsigned int line_number)
 {
 	int n;
 	stack_t *tmp;

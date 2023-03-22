@@ -3,11 +3,11 @@
 #include "monty.h"
 
 /**
- * pop - removes the top element of the stack
+ * _pop - removes the top element of the stack
  * @stack: double pointer to head node
  * @line_number: line number of file where instruction was parsed
  */
-void pop(stack_t **stack, unsigned int line_number)
+void _pop(stack_t **stack, unsigned int line_number)
 {
 	stack_t *to_free;
 

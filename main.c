@@ -5,7 +5,7 @@
 #include "monty.h"
 
 void _monty(stack_t **stack, char *command, unsigned int line_number);
-char *argument = NULL; /* for some reason, betty ignores this */
+char *op_arg = NULL; /* for some reason, betty ignores this */
 
 /**
  * main - entry point of monty bytecode interpreter
@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
 		if (*buffer == 10) /* skip empty lines */
 			continue;
 		command = strtok(buffer, " \t\n");
-		argument = strtok(NULL, " \t\n");
+		op_arg = strtok(NULL, " \t\n");
 		if (command == NULL || *command == '#') /* skip comments */
 			continue;
 		_monty(&stack, command, line_number);

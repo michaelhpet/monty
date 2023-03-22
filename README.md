@@ -6,7 +6,7 @@ Monty 0.98 is a scripting language that is first compiled into Monty byte codes 
 
 ### Monty byte code files
 
-Files containing Monty byte codes usually have the `.m` extension. Most of the industry uses this standard but it is not required by the specification of the language. There is not more than one instruction per line. There can be any number of spaces before or after the opcode and its argument:
+Files containing Monty byte codes usually have the `.m` extension. Most of the industry uses this standard but it is not required by the specification of the language. There is not more than one instruction per line. There can be any number of spaces before or after the opcode and its op_arg:
 
 ```bash
 kael@think:~$ cat -e bytecodes/000.m
@@ -22,7 +22,7 @@ pall$
 kael@think:~$
 ```
 
-Monty byte code files can contain blank lines (empty or made of spaces only), and any additional text after the opcode or its required argument is not taken into account:
+Monty byte code files can contain blank lines (empty or made of spaces only), and any additional text after the opcode or its required op_arg is not taken into account:
 
 ```bash
 kael@think:~$ cat -e bytecodes/001.m
@@ -48,7 +48,7 @@ kael@think:~$
 
 - Usage: `monty file`
   - where `file` is the path to the file containing Monty byte code
-- If the user does not give any file or more than one argument to the program, the program prints the error message `USAGE: monty file`, followed by a new line, and exit with the status `EXIT_FAILURE`
+- If the user does not give any file or more than one op_arg to the program, the program prints the error message `USAGE: monty file`, followed by a new line, and exit with the status `EXIT_FAILURE`
 - If, for any reason, it’s not possible to open the file, the program prints the error message `Error: Can't open file <file>`, followed by a new line, and exit with the status `EXIT_FAILURE`
   where `<file>` is the name of the file
 - If the file contains an invalid instruction, the program prints the error message `L<line_number>: unknown instruction <opcode>`, followed by a new line, and exit with the status `EXIT_FAILURE`

@@ -3,17 +3,17 @@
 
 #define INSTRUCTIONS \
 		{ \
-			{"push", push}, \
-			{"pall", pall}, \
-			{"pint", pint}, \
-			{"pop", pop}, \
-			{"swap", swap}, \
-			{"add", add}, \
-			{"nop", nop}, \
+			{"push", _push}, \
+			{"pall", _pall}, \
+			{"pint", _pint}, \
+			{"pop", _pop}, \
+			{"swap", _swap}, \
+			{"add", _add}, \
+			{"nop", _nop}, \
 			{NULL, NULL} \
 		}
 
-extern char *argument;
+extern char *op_arg; /* argument variable to operations that require argument */
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -45,14 +45,16 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-int nan(char *s);
-void free_stack(stack_t *stack);
-void push(stack_t **stack, unsigned int line_number);
-void pall(stack_t **stack, unsigned int line_number);
-void pint(stack_t **stack, unsigned int line_number);
-void pop(stack_t **stack, unsigned int line_number);
-void swap(stack_t **stack, unsigned int line_number);
-void add(stack_t **stack, unsigned int line_number);
-void nop(stack_t **stack, unsigned int line_number);
+void _push(stack_t **stack, unsigned int line_number);
+void _pall(stack_t **stack, unsigned int line_number);
+void _pint(stack_t **stack, unsigned int line_number);
+void _pop(stack_t **stack, unsigned int line_number);
+void _swap(stack_t **stack, unsigned int line_number);
+void _add(stack_t **stack, unsigned int line_number);
+void _nop(stack_t **stack, unsigned int line_number);
+
+/* utility functions */
+int _nan(char *s); /* checks if a string sequence is not a valid number */
+void free_stack(stack_t *stack); /* frees the stack */
 
 #endif /* _MONTY_H_ */

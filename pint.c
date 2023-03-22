@@ -3,11 +3,11 @@
 #include "monty.h"
 
 /**
- * pint - prints the value at the top of the stack
+ * _pint - prints the value at the top of the stack
  * @stack: double pointer to head node
  * @line_number: line number of file where instruction was parsed
  */
-void pint(stack_t **stack, unsigned int line_number)
+void _pint(stack_t **stack, unsigned int line_number)
 {
 	if (*stack)
 	{

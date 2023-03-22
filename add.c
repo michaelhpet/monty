@@ -3,11 +3,11 @@
 #include "monty.h"
 
 /**
- * add - adds the top two elements of the stack
+ * _add - adds the top two elements of the stack
  * @stack: double pointer to head node
  * @line_number: line number of file where instruction was parsed
  */
-void add(stack_t **stack, unsigned int line_number)
+void _add(stack_t **stack, unsigned int line_number)
 {
 	int n1, n2;
 	stack_t *tmp;

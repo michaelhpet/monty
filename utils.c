@@ -2,11 +2,11 @@
 #include "monty.h"
 
 /**
- * nan - checks if a string contains non-digit characters
+ * _nan - checks if a string contains non-digit characters
  * @s: string to parse
  * Return: 0 if all chars are digits, 1 otherwise
 */
-int nan(char *s)
+int _nan(char *s)
 {
 	int i = 0;
 
