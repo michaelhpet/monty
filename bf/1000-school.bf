@@ -1,3 +1,5 @@
+print "School"
+
 cell 0 | print 83: S
 >+++++ +++[<+++++ +++++>-]<+++. print 83
 
