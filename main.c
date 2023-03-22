@@ -1,7 +1,3 @@
-#define  _POSIX_C_SOURCE 200809L
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include "monty.h"
 
 void _monty(stack_t **stack, char *command, unsigned int line_number);
