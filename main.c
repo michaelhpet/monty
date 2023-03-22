@@ -1,3 +1,7 @@
+#define  _POSIX_C_SOURCE 200809L
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "monty.h"
 
 char *argument;
@@ -52,7 +56,7 @@ int main(int argc, char *argv[])
 
 /**
  * monty - a monty bytecode interpreter for working with stacks and queues
- * @stack: pointer to stack
+ * @stack: double pointer to stack
  * @command: command or opcode of instruction
  * @line_number: line number of instruction file
 */

@@ -5,7 +5,8 @@
  * @stack: double pointer to head node
  * @line_number: line number of file where instruction was parsed
  */
-void nop(stack_t **stack UNUSED, unsigned int line_number UNUSED)
+void nop(stack_t **stack, unsigned int line_number)
 {
-	return;
+	(void)stack;
+	(void)line_number;
 }

@@ -1,11 +1,6 @@
 #ifndef _MONTY_H_
 #define _MONTY_H_
 
-#define  _POSIX_C_SOURCE 200809L
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
 #define INSTRUCTIONS \
 		{ \
 			{"push", push}, \
@@ -17,8 +12,6 @@
 			{"nop", nop}, \
 			{NULL, NULL} \
 		}
-
-#define UNUSED __attribute__((unused))
 
 extern char *argument;
 

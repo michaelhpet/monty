@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "monty.h"
 
 /**
@@ -5,7 +6,7 @@
  * @stack: double pointer to head node
  * @line_number: line number of file where instruction was parsed
  */
-void pall(stack_t **stack, unsigned int line_number UNUSED)
+void pall(stack_t **stack, unsigned int line_number __attribute__((unused)))
 {
 	stack_t *current = *stack;
 
