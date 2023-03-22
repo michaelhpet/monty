@@ -36,6 +36,23 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/**
+ * struct state_s - state struct for storing global variables in the program
+ * @data_type: data type in use (stack or queue)
+ * @head: head node of doubly-linked list used for data
+ * @tail: tail node of doubly-linked list used for data
+ * @argument: argument variable to operations that require argument
+ */
+typedef struct state_s
+{
+	char *data_type;
+	stack_t *head;
+	stack_t *tail;
+	char *argument;
+} state_t;
+
+extern state_t state; /* global variable to be used across functions */
+
 #define INSTRUCTIONS \
 		{ \
 			{"push", _push}, \
@@ -53,10 +70,10 @@ typedef struct instruction_s
 			{"pstr", _pstr}, \
 			{"rotl", _rotl}, \
 			{"rotr", _rotr}, \
+			{"queue", _queue}, \
+			{"stack", _stack}, \
 			{NULL, NULL} \
 		}
-
-extern char *argument; /* argument variable to operations that require argument */
 
 void _push(stack_t **stack, unsigned int line_number);
 void _pall(stack_t **stack, unsigned int line_number);
@@ -77,5 +94,7 @@ void _rotr(stack_t **stack, unsigned int line_number);
 /* utility functions */
 int _nan(char *s); /* checks if a string sequence is not a valid number */
 void free_stack(stack_t *stack); /* frees the stack */
+void _queue(stack_t**, unsigned int); /* changes state.data_type to queue */
+void _stack(stack_t**, unsigned int); /* changes state.data_type to stack */
 
 #endif /* _MONTY_H_ */
