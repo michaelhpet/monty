@@ -13,7 +13,7 @@
 			{NULL, NULL} \
 		}
 
-extern char *op_arg; /* argument variable to operations that require argument */
+extern char *argument; /* argument variable to operations that require argument */
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
