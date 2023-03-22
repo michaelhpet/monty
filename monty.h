@@ -47,6 +47,8 @@ typedef struct instruction_s
 			{"nop", _nop}, \
 			{"sub", _sub}, \
 			{"div", _div}, \
+			{"mul", _mul}, \
+			{"mod", _mod}, \
 			{NULL, NULL} \
 		}
 
@@ -61,6 +63,8 @@ void _add(stack_t **stack, unsigned int line_number);
 void _nop(stack_t **stack, unsigned int line_number);
 void _sub(stack_t **stack, unsigned int line_number);
 void _div(stack_t **stack, unsigned int line_number);
+void _mul(stack_t **stack, unsigned int line_number);
+void _mod(stack_t **stack, unsigned int line_number);
 
 /* utility functions */
 int _nan(char *s); /* checks if a string sequence is not a valid number */
