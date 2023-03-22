@@ -4,7 +4,8 @@
 #include <string.h>
 #include "monty.h"
 
-char *argument;
+void monty(stack_t **stack, char *command, unsigned int line_number);
+char *argument = NULL; /* for some reason, betty ignores this */
 
 /**
  * main - entry point of monty bytecode interpreter
