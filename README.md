@@ -59,3 +59,7 @@ kael@think:~$
   - it finds an error in the file
   - an error occured
 - If the program can’t malloc anymore, it prints the error message `Error: malloc failed`, followed by a new line, and exit with status `EXIT_FAILURE`.
+
+### Authors
+
+Michael Peter
