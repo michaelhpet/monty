@@ -1,12 +1,13 @@
-add two digits from stdin
+add two numbers from stdin
 
-get first digit
+get first number
 >,
->+++++ +++++[<---->-]>----- ---
 
-get second digit
+get second number
 >,
->+++++ +++++[<---->-]>----- ---
 
-add second cell value to first cell
-[<+>-]<.
+add first number to second number
+<[->+<]
+
+convert to digit ascii char
++++++ +++[>----- -<-]>.
