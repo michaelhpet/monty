@@ -1,7 +1,7 @@
 /**
  * nan - checks if a string contains non-digit characters
  * @s: string to parse
- * Return: if all chars are digits, 1 otherwise
+ * Return: 0 if all chars are digits, 1 otherwise
 */
 int nan(char *s)
 {
