@@ -1,3 +1,5 @@
+#include "monty.h"
+
 /**
  * nan - checks if a string contains non-digit characters
  * @s: string to parse
